@@ -1,0 +1,38 @@
+<template>
+    <!-- Search Section -->
+    <lightning-card title="IMDB Movie Rating">
+        <lightning-layout class="slds-p-around_medium">
+            <lightning-layout-item size="5">
+                <lightning-input 
+                    label="Enter Movie Name" 
+                    onchange={handleChange}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item class="slds-m-top_large slds-m-left_medium">
+                <lightning-button 
+                    label="Search" 
+                    onclick={handleClick}>
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    <!-- Movies List Section -->
+    
+        <lightning-card title={title} class="slds-p-around_medium">
+            <template if:true={movies}>
+            <lightning-layout class="slds-grid slds-grid_align-center slds-grid_vertical-align-center slds-wrap slds-p-around_large">
+                <template for:each={movies} for:item="movie">
+                    <lightning-layout-item key={movie.imdbID} class="slds-m-horizontal_medium slds-border_bottom slds-border_left slds-border_right slds-m-top_large">
+                        <img src={movie.Poster} alt="Movie Poster"
+                        style ="width: 300px; height: 400px; object-fit: cover; border-radius: 5px;">
+                            <p class="slds-m-left_medium slds-text-title_bold slds-m-top_large">Title: {movie.Title}</p>
+                            <p class="slds-m-left_medium slds-text-title_bold">Year: {movie.Year}</p>
+                            <p class="slds-m-left_medium slds-text-title_bold slds-m-bottom_xx-large">Type: {movie.Type}</p>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </template>
+        </lightning-card>
+</template>
