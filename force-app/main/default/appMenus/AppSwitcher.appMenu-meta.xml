@@ -100,4 +100,8 @@
         <name>DEVHUB_2gy65nslzdtg2jkg4v4h</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>LWC_APPLICATION</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>
